@@ -121,7 +121,7 @@
     assert.equal(im_outside, 15);
   });
 
-  QUnit.test("We can do goofy stuff with outer scope", function(assert){
+  QUnit.test("We can do goofy stuff with outer scope", function(assert){ //the variable hello is added to itself everytime.
 
     var hello = "greg";
     var name = "";
@@ -147,7 +147,7 @@
       im_outter *= 20;
       whatever();
     }
-    something(yay);
+    something(yay); //the function something mutiplies im_outer by 20. it takes in the parameter of yay which is a function that divides im_oter by 5 which equals 40. 
     assert.equal(im_outter, 40);
 
   });
@@ -159,7 +159,7 @@
     function foo(whatever){
       return "hello, this" + whatever();
     }
-    assert.equal(foo(yay), "hello, this is dog");
+    assert.equal(foo(yay), "hello, this is dog"); // foo returns 'hello this' + whatever(); which is yay. yay returns 'is dog'. 
   });
 
 })();

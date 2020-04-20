@@ -74,28 +74,32 @@ function makeContactList() { //when this function is called it will create a con
          }, 
          
         removeContact: function(contact){ //searches contacts but deletes if contact is found :()
-            for(var i = 0; i < contacts.length; i++){
-                if(contact === contacts[i]){
-                    contacts.splice(i,1);
+            for(var i = 0; i < contacts.length; i++){ // looping through array 
+                if(contact === contacts[i]){ //if contact is found 
+                    contacts.splice(i,1); //start at i element and remove one element in total 
                 }else {
                     return console.log('No such contact');
                 }
             
         }
         },
-        printAllContactNames: function(array){
-            var pac = [];
-            for(var i = 0; i < array.length; i++){
-                pac.push(contacts[i].nameFirst + ' ' + contacts[i].nameLast);
+        printAllContactNames: function(){
+            var pac = []; //array creation
+            for(var i = 0; i < contacts.length; i++){ //looping through contacts
+                pac.push(contacts[i].nameFirst + ' ' + contacts[i].nameLast ); //pushes easch full name to pac array.
+            }
+            return pac.join('\n'); //returning a string replacing the commas with new line character ''\n'
+            
+            }
+            
                 
             }
-            return pac.join('\n');
+           
             
         }
-        }
-}
-    
-    
+        
+
+  
 
 
 
