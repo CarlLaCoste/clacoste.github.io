@@ -21,6 +21,7 @@ var _ = {};
 *   _.identity({a: "b"}) === {a: "b"}
 */
 _.identity = function(value){
+    // returns the value of what was invoked. 
     return value;
 }
 
@@ -43,10 +44,10 @@ _.identity = function(value){
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
-_.typeOf = function(value){
+_.typeOf = function(value){ // returns a string of the datatype invoked. 
     if(value === null){
         return 'null';
-    }else if(Array.isArray(value) === true){
+    }else if(Array.isArray(value) === true){ // checking to see if value is an array 
         return 'array';
     }else if(typeof value === 'object'){
         return 'object';
@@ -226,9 +227,10 @@ _.each = function(collection,func){
 //     var arr1 = [];
 //     for(var )
     
-   
-// }
+  _.unique = function(arr){
+      arr.indexOf()
 
+};
 
 /** _.filter
 * Arguments:
@@ -444,6 +446,11 @@ _.every = function(collection,func){
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
 
+_.some = function(collection, func){
+    
+    
+}
+
 
 /** _.reduce
 * Arguments:
@@ -464,8 +471,17 @@ _.every = function(collection,func){
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
 _.reduce = function(arr,func,seed){
+    // takes an array and a function and the function paramaters are previous result, current result, and
+    _.each(arr, function(val,i,arr){
+        if (seed === undefined){
+            seed = val;
+        }else{
+            seed = func(seed,val, i);
+        }
+    });
+    return seed;
     
-}
+};
 
 /** _.extend
 * Arguments:
@@ -481,6 +497,10 @@ _.reduce = function(arr,func,seed){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+
+_.extend = function(obj1,obj2){
+    
+}
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
